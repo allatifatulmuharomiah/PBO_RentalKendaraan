@@ -22,6 +22,7 @@ public class FormKendaraan extends javax.swing.JFrame {
     public FormKendaraan() {
         initComponents();
         ctken = new Controllerkendaraan(this);
+        ctken.isiTable();
     }
 
     /**

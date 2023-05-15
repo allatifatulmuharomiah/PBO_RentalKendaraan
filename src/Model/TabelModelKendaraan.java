@@ -12,6 +12,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class TabelModelKendaraan extends AbstractTableModel{
     
+
     public TabelModelKendaraan(List<Kendaraan> lst)
     {
         this.lst = lst;
@@ -76,8 +77,9 @@ public class TabelModelKendaraan extends AbstractTableModel{
             default:
                 return null;  
         }
-        
-    }
-
+}
+    
     List<Kendaraan> lst;
+
+    
 }

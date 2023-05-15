@@ -9,7 +9,6 @@ import DAOInterface.IDAOKendaraan;
 import Model.Kendaraan;
 import Model.TabelModelKendaraan;
 import java.util.List;
-import javax.swing.JOptionPane;
 import view.FormKendaraan;
 /**
  *

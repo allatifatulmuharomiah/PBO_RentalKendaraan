@@ -7,7 +7,6 @@ package DAO;
 import DAOInterface.IDAOKendaraan;
 import Helper.koneksi;
 import Model.Kendaraan;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Connection;
