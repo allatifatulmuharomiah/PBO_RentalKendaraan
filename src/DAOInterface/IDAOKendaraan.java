@@ -4,10 +4,14 @@
  */
 package DAOInterface;
 
+import Model.Kendaraan;
+import java.util.List;
+
 /**
  *
  * @author LENOVO
  */
 public interface IDAOKendaraan {
+    public List<Kendaraan> getAll();
     
 }

@@ -4,6 +4,12 @@
  */
 package view;
 
+import Controller.Controllerkendaraan;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author LENOVO
@@ -15,6 +21,7 @@ public class FormKendaraan extends javax.swing.JFrame {
      */
     public FormKendaraan() {
         initComponents();
+        ctken = new Controllerkendaraan(this);
     }
 
     /**
@@ -336,4 +343,10 @@ public class FormKendaraan extends javax.swing.JFrame {
     private javax.swing.JTextField txttahun;
     private javax.swing.JTextField txttipe;
     // End of variables declaration//GEN-END:variables
+    Controllerkendaraan ctken;
+
+    public JTable getTableKendaraan() 
+    {
+        return tabelkendaraan;
+    }
 }
