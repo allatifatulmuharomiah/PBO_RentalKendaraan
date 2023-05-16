@@ -7,6 +7,7 @@ package DAO;
 import DAOInterface.IDAOKendaraan;
 import Helper.koneksi;
 import Model.Kendaraan;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Connection;
@@ -52,8 +53,40 @@ public class DAOKendaraan implements IDAOKendaraan{
        return lst;
     }
     
+    @Override
+    public void insert(Kendaraan k) 
+    {
+        PreparedStatement statement = null;
+        try
+        {
+            statement = con.prepareStatement(strinsert);
+            statement.setInt(1, k.getId_k());
+            statement.setString(2, k.getJenis());
+            statement.setString(3, k.getMerek());
+            statement.setString(4, k.getTipe());
+            statement.setString(5, k.getTahun());
+            statement.setString(6, k.getNomor());
+            statement.setInt(7, k.getHarga());
+            statement.setString(8, k.getStatus());
+            statement.execute();
+        }catch(SQLException e)
+        {
+            System.out.println("gagal input ");
+        }
+        finally
+        {
+            try
+            {
+                statement.close();
+            } catch(SQLException ex)
+            {
+                System.out.println("gagal input ");
+            }
+        }
+    }
     
     Connection con;
     //SQL Query
     String strread = "select * from tblkendaraan;";
+    String strinsert = "insert into tblkendaraan (id_k, jenis, merek, tipe, tahun, nomor, harga, status) values (?,?,?,?,?,?,?,?);";
 }

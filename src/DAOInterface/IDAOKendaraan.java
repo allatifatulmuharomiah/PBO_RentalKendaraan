@@ -14,4 +14,9 @@ import java.util.List;
 public interface IDAOKendaraan {
     public List<Kendaraan> getAll();
     
+    /**
+     *
+     * @param k
+     */
+    public void insert(Kendaraan k);
 }

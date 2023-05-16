@@ -123,6 +123,11 @@ public class FormKendaraan extends javax.swing.JFrame {
         jLabel9.setText("Status");
 
         btnsubmit.setText("Submit");
+        btnsubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsubmitActionPerformed(evt);
+            }
+        });
 
         btnedit.setText("Edit");
 
@@ -278,6 +283,13 @@ public class FormKendaraan extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtidActionPerformed
 
+    private void btnsubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitActionPerformed
+        // TODO add your handling code here:
+        ctken.insert();
+        ctken.isiTable();
+        ctken.reset();
+    }//GEN-LAST:event_btnsubmitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -349,5 +361,45 @@ public class FormKendaraan extends javax.swing.JFrame {
     public JTable getTableKendaraan() 
     {
         return tabelkendaraan;
+    }
+    
+    public JTextField gettxtID_k()
+    {
+        return txtid;
+    }
+    
+    public JComboBox setJenis()
+    {
+        return setjenis;
+    }
+    
+    public JTextField gettxtMerek()
+    {
+        return txtmerek;
+    }
+    
+    public JTextField gettxtTipe()
+    {
+        return txttipe;
+    }
+    
+    public JTextField gettxtTahun()
+    {
+        return txttahun;
+    }
+    
+    public JTextField gettxtNomor()
+    {
+        return txtnomor;
+    }
+    
+    public JTextField gettxtHarga()
+    {
+        return txtharga;
+    }
+    
+    public JComboBox setStatus()
+    {
+        return setstatus;
     }
 }
