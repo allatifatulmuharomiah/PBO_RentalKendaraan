@@ -130,10 +130,25 @@ public class FormKendaraan extends javax.swing.JFrame {
         });
 
         btnedit.setText("Edit");
+        btnedit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditActionPerformed(evt);
+            }
+        });
 
         btndelete.setText("Delete");
+        btndelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndeleteActionPerformed(evt);
+            }
+        });
 
         btnrefresh.setText("Refresh");
+        btnrefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrefreshActionPerformed(evt);
+            }
+        });
 
         tabelkendaraan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -146,6 +161,11 @@ public class FormKendaraan extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tabelkendaraan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelkendaraanMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tabelkendaraan);
 
         setjenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mobil", "Motor" }));
@@ -273,10 +293,13 @@ public class FormKendaraan extends javax.swing.JFrame {
 
     private void btncariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncariActionPerformed
         // TODO add your handling code here:
+        ctken.cari();
+        ctken.reset();
     }//GEN-LAST:event_btncariActionPerformed
 
     private void txtcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcariActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtcariActionPerformed
 
     private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
@@ -289,6 +312,31 @@ public class FormKendaraan extends javax.swing.JFrame {
         ctken.isiTable();
         ctken.reset();
     }//GEN-LAST:event_btnsubmitActionPerformed
+
+    private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
+        // TODO add your handling code here:
+        ctken.update();
+        ctken.isiTable();
+        ctken.reset();
+    }//GEN-LAST:event_btneditActionPerformed
+
+    private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
+        // TODO add your handling code here:
+        ctken.delete();
+        ctken.isiTable();
+        ctken.reset();
+    }//GEN-LAST:event_btndeleteActionPerformed
+
+    private void tabelkendaraanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelkendaraanMouseClicked
+        // TODO add your handling code here:
+        int row = tabelkendaraan.getSelectedRow();
+        ctken.isiField(row);
+    }//GEN-LAST:event_tabelkendaraanMouseClicked
+
+    private void btnrefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefreshActionPerformed
+        // TODO add your handling code here:
+        ctken.reset();
+    }//GEN-LAST:event_btnrefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,10 +366,8 @@ public class FormKendaraan extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormKendaraan().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new FormKendaraan().setVisible(true);
         });
     }
 
@@ -402,4 +448,21 @@ public class FormKendaraan extends javax.swing.JFrame {
     {
         return setstatus;
     }
+
+    public JTextField gettxtCariTipe() {
+        return txtcari;
+    }
+
+    public Object getTabelData() {
+        return tabelkendaraan;
+   }
+
+    
+    
+
+    
+
+    
+    
+    
 }

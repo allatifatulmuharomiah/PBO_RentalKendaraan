@@ -19,4 +19,11 @@ public interface IDAOKendaraan {
      * @param k
      */
     public void insert(Kendaraan k);
+
+    public void update(Kendaraan k);
+    
+    public void delete (int Id_k);
+    
+    public List<Kendaraan> getAllByName(String tipe);
+    
 }
