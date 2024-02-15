@@ -59,7 +59,7 @@ public class TabelModelTransaksi extends AbstractTableModel{
        switch (columnIndex)
         {
             case 0:
-                return ls.get(rowIndex).getId_k();
+                return ls.get(rowIndex).getId_t();
             case 1:
                 return ls.get(rowIndex).getPeminjam();
             case 2:
@@ -81,3 +81,4 @@ public class TabelModelTransaksi extends AbstractTableModel{
     List<Transaksi> ls;
           
 }
+

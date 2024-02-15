@@ -69,14 +69,14 @@ public class Transaksi {
     /**
      * @return the id_k
      */
-    public Integer getId_k() {
+    public String getId_k() {
         return id_k;
     }
 
     /**
      * @param id_k the id_k to set
      */
-    public void setId_k(Integer id_k) {
+    public void setId_k(String id_k) {
         this.id_k = id_k;
     }
 
@@ -121,13 +121,15 @@ public class Transaksi {
     public void setStatus(String status) {
         this.status = status;
     }
+
     
     private Integer id_t;
     private String peminjam;
     private String no_telp;
     private String tipe;
-    private Integer id_k;
+    private String id_k;
     private Integer hari;
     private Integer total;
     private String status;
+    
 }

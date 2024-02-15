@@ -84,7 +84,7 @@ public class Controllerkendaraan {
  
     public void update()
     {
-       Kendaraan k = new Kendaraan();
+        Kendaraan k = new Kendaraan();
         k.setJenis(frmKendaraan.setJenis().getSelectedItem().toString());
         k.setMerek(frmKendaraan.gettxtMerek().getText());
         k.setTipe(frmKendaraan.gettxtTipe().getText());
@@ -106,7 +106,7 @@ public class Controllerkendaraan {
         
     }
     
-   public void cari()
+    public void cari()
     {
         lst = iKendaraan.getAllByName(frmKendaraan.gettxtCariTipe().getText());
         TabelModelKendaraan tabelken = new TabelModelKendaraan(lst);

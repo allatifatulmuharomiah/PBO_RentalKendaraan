@@ -14,6 +14,12 @@ public interface IDAOTransaksi {
     public List<Transaksi> getAll();
     
     public void insert(Transaksi t);
+    
+    public void update (Transaksi t);
+    
+    public void delete (int Id_t);
+    
+    public List<Transaksi> getAllByName(String peminjam);
 }
 
 

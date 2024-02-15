@@ -26,4 +26,5 @@ public interface IDAOKendaraan {
     
     public List<Kendaraan> getAllByName(String tipe);
     
+    
 }
